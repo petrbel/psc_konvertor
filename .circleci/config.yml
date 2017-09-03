@@ -25,7 +25,7 @@ jobs:
   test_archlinux:
     docker:
       - image: pritunl/archlinux:2017-07-08
-    working_directory: ~/cxflow
+    working_directory: ~/psc_konvertor
     steps:
       - *arch_deps
       - checkout

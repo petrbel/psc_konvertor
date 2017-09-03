@@ -1,4 +1,4 @@
-# PSČ Konvertor
+# PSČ Konvertor [![CircleCI](https://circleci.com/gh/petrbel/psc_konvertor/tree/master.svg?style=shield)](https://circleci.com/gh/petrbel/psc_konvertor/tree/master)
 Jednoduchý PSČ konvertor na okresy a kraje. Zdrojový kód je psaný česky z veřejně nepublikovatelných důvodů :)
 
 ## Instalace

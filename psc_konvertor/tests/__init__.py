@@ -1,0 +1,27 @@
+from unittest import TestCase
+
+from psc_konvertor import PscKonvertor
+
+
+class PSCKonvertorTest(TestCase):
+
+    def setUp(self):
+        self.konvertor = PscKonvertor()
+
+    def test_psc2okres(self):
+        self.assertEqual(self.konvertor.psc2okres(26601), 'Beroun')
+        self.assertEqual(self.konvertor.psc2okres(37833), 'Jindřichův Hradec')
+        self.assertEqual(self.konvertor.psc2okres(28401), 'Kutná Hora')
+        self.assertEqual(self.konvertor.psc2okres(74254), 'Nový Jičín')
+
+    def test_okres2kraj(self):
+        self.assertEqual(self.konvertor.okres2kraj('Beroun'), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.okres2kraj('Rakovník'), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.okres2kraj('Šumperk'), 'Olomoucký kraj')
+        self.assertEqual(self.konvertor.okres2kraj('Žďár nad Sázavou'), 'Kraj Vysočina')
+
+    def test_psc2kraj(self):
+        self.assertEqual(self.konvertor.psc2kraj(26601), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.psc2kraj(37833), 'Jihočeský kraj')
+        self.assertEqual(self.konvertor.psc2kraj(28401), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.psc2kraj(74254), 'Moravskoslezský kraj')

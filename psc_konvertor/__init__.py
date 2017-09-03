@@ -1,15 +1,22 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 import pandas
 
-__author__ = 'Petr Belohlavek <me [zavinac] petrbel [tecka] cz>'
+__author__ = 'Petr Belohlavek <me@petrbel.cz>'
 
+print()
 
 class PscKonvertor:
     """Konvertuje postovni smerovaci cisla na prislusne okresy a kraje.
        Vyhledavani je pro maximalni rychlost indexovane."""
 
-    def __init__(self, psc2okres_f='psc2okres.csv', okres2kraj_f='okres2kraj.csv'):
+    _MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
+    _DATA_PATH = os.path.join(_MODULE_PATH, 'data')
+
+    def __init__(self, psc2okres_f=os.path.join(_DATA_PATH, 'psc2okres.csv'),
+                 okres2kraj_f=os.path.join(_DATA_PATH, 'okres2kraj.csv')):
         """CSV tabulky se sloupci PSC,Okres a Okres,Kraj. Volitelne mohou obsahovat i dalsi sloupce."""
 
         self.psc2okres_ = pandas.read_csv(psc2okres_f, header=0, encoding='utf-8')

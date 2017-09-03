@@ -1,9 +1,14 @@
 # PSČ Konvertor
 Jednoduchý PSČ konvertor na okresy a kraje. Zdrojový kód je psaný česky z veřejně nepublikovatelných důvodů :)
 
+## Instalace
+```bash
+pip install --user git+https://github.com/petrbel/PscKonvertor.git
+```
+
 ## Example (python3)
 ```python
-In [1]: from PscKonvertor import PscKonvertor
+In [1]: from psc_konvertor import PscKonvertor
 
 In [2]: konvertor = PscKonvertor()
 

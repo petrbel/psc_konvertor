@@ -22,8 +22,10 @@ setup(name='psc_konvertor',
       author='Petr Bělohlávek',
       author_email='me@petrbel.cz',
       license='MIT',
-      packages=['psc_konvertor'],
+      packages=['psc_konvertor',
+                'psc_konvertor.data'],
       package_data={
+          # If any package contains *.txt or *.rst files, include them:
           '': ['*.csv'],
       },
       include_package_data=True,

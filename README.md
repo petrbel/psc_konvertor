@@ -3,7 +3,7 @@ Jednoduchý PSČ konvertor na okresy a kraje. Zdrojový kód je psaný česky z 
 
 ## Instalace
 ```bash
-pip install --user git+https://github.com/petrbel/PscKonvertor.git
+pip install --user git+https://github.com/petrbel/psc_konvertor.git
 ```
 
 ## Example (python3)

@@ -1,0 +1,40 @@
+version: 2
+
+references:
+
+  arch_deps: &arch_deps
+    run:
+      name: Install dependencies on Arch Linux.
+      command: |
+        pacman -S --noconfirm python python-pip git base-devel curl
+
+  install: &install
+    run:
+      name: Install.
+      command: |
+        pip3 install .
+
+  test: &test
+    run:
+      name: Run tests.
+      command: |
+        python3 setup.py test
+
+jobs:
+
+  test_archlinux:
+    docker:
+      - image: pritunl/archlinux:2017-07-08
+    working_directory: ~/cxflow
+    steps:
+      - *arch_deps
+      - checkout
+      - *install
+      - *test
+
+workflows:
+
+  version: 2
+  test-doc-deploy:
+    jobs:
+      - test_archlinux

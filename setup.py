@@ -12,7 +12,7 @@ except:
       requirements = [str(ir.requirement) for ir in install_reqs]
 
 setup(name='psc_konvertor',
-      version='0.2.0',
+      version='0.3.0',
       description='PSČ Konvertor',
       long_description='',
       classifiers=[

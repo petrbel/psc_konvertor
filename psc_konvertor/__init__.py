@@ -43,11 +43,8 @@ class PscKonvertor:
     def okres2kraj(self, okres):
         """Prevede `okres` na kraj, ve kterem dany okres lezi."""
 
-        if 'Praha' in okres:
-            return 'Hlavní město Praha'
-        else:
-            kraj_zaznam = self.okres2kraj_.loc[okres]
-            return kraj_zaznam['Kraj']
+        kraj_zaznam = self.okres2kraj_.loc[okres]
+        return kraj_zaznam['Kraj']
 
     def psc2kraj(self, psc):
         """Prevede `pcs` na kraj, ve kterem dana obec lezi."""

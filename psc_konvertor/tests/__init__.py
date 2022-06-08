@@ -25,3 +25,18 @@ class PSCKonvertorTest(TestCase):
         self.assertEqual(self.konvertor.psc2kraj(37833), 'Jihočeský kraj')
         self.assertEqual(self.konvertor.psc2kraj(28401), 'Středočeský kraj')
         self.assertEqual(self.konvertor.psc2kraj(74254), 'Moravskoslezský kraj')
+
+    def test_Praha_psc2okres(self):
+        self.assertEqual(self.konvertor.psc2okres(25245), 'Praha-západ')
+        self.assertEqual(self.konvertor.psc2okres(25170), 'Praha-východ')
+        self.assertEqual(self.konvertor.psc2okres(19011), 'Hlavní město Praha')
+
+    def test_Praha_okres2kraj(self):
+        self.assertEqual(self.konvertor.okres2kraj('Praha-západ'), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.okres2kraj('Praha-východ'), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.okres2kraj('Hlavní město Praha'), 'Hlavní město Praha')
+
+    def test_Praha_psc2kraj(self):
+        self.assertEqual(self.konvertor.psc2kraj(25245), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.psc2kraj(25170), 'Středočeský kraj')
+        self.assertEqual(self.konvertor.psc2kraj(19011), 'Hlavní město Praha')    
